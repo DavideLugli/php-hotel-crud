@@ -36,7 +36,7 @@ include 'database.php';
                 <td><?php echo $room['room_number']; ?></td>
                 <td><?php echo $room['floor']; ?></td>
                 <td><?php echo $room['beds']; ?></td>
-                <td><a href="#">View</a></td>
+                <td><a href="show/show.php?id=<?php echo $room['id']; ?>">View</a></td>
                 <td><a href="#">Update</a></td>
                 <td>DELETE</td>
               </tr>
