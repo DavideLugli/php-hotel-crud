@@ -1,15 +1,8 @@
 <?php
 include 'database.php';
+include 'partials/header.php';
  ?>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dist/style.css">
-  <title>Hotel Crud</title>
-</head>
 
 <body>
   <div class="container">
@@ -31,15 +24,20 @@ include 'database.php';
             <?php
             if (!empty($rooms)) {
             foreach ($rooms as $room) { ?>
-              <tr>
-                <td><?php echo $room['id']; ?></td>
-                <td><?php echo $room['room_number']; ?></td>
-                <td><?php echo $room['floor']; ?></td>
-                <td><?php echo $room['beds']; ?></td>
-                <td><a href="show/show.php?id=<?php echo $room['id']; ?>">View</a></td>
-                <td><a href="#">Update</a></td>
-                <td>DELETE</td>
-              </tr>
+            <tr>
+              <td><?php echo $room['id']; ?></td>
+              <td><?php echo $room['room_number']; ?></td>
+              <td><?php echo $room['floor']; ?></td>
+              <td><?php echo $room['beds']; ?></td>
+              <td><a href="show/show.php?id=<?php echo $room['id']; ?>">View</a></td>
+              <td><a href="#">Update</a></td>
+              <td>
+                <form action="delete/delete.php" method="post">
+                  <input type="hidden" name="id" value="<?php echo $room['id']; ?>">
+                  <input class="btn-danger" type="submit" value="Delete">
+                </form>
+              </td>
+            </tr>
             <?php }
              }
              ?>
