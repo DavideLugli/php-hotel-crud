@@ -1,8 +1,12 @@
 <?php
-include 'database.php';
+include 'server.php';
 include 'partials/header.php';
  ?>
-
+<?php if (!empty($_GET['roomNumber'])) { ?>
+  <div class="alert alert-danger">
+    Hai Cancellato la stanza con ID <?php echo $_GET['roomNumber'] ?>
+  </div>
+<?php } ?>
 
 <body>
   <div class="container">
@@ -33,8 +37,8 @@ include 'partials/header.php';
               <td><a href="#">Update</a></td>
               <td>
                 <form action="delete/delete.php" method="post">
-                  <input type="hidden" name="id" value="<?php echo $room['id']; ?>">
-                  <input class="btn-danger" type="submit" value="Delete">
+                  <input type="hidden" name="id" value="<?php echo $room['id'] ?>">
+                  <input class="btn btn-danger" type="submit" value="Delete">
                 </form>
               </td>
             </tr>
@@ -47,6 +51,4 @@ include 'partials/header.php';
       </div>
     </div>
   </div>
-</body>
-
-</html>
+<?php include 'partials/footer.php'; ?>
