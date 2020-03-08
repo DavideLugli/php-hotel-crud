@@ -34,7 +34,7 @@ include 'partials/header.php';
               <td><?php echo $room['floor']; ?></td>
               <td><?php echo $room['beds']; ?></td>
               <td><a href="show/show.php?id=<?php echo $room['id']; ?>">View</a></td>
-              <td><a href="#">Update</a></td>
+              <td><a href="update/update.php?id=<?php echo $room['id']; ?>">Update</a></td>
               <td>
                 <form action="delete/delete.php" method="post">
                   <input type="hidden" name="id" value="<?php echo $room['id'] ?>">
