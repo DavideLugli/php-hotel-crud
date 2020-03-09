@@ -1,4 +1,4 @@
-<?php include_once 'env.php'; ?>
+<?php include_once __DIR__.'/../env.php'; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -13,5 +13,6 @@
   <nav class="navbar navbar-dark bg-dark">
   <span class="navbar-brand mb-0 h1">Boolean Hotelean</span>
   <a href="<?php echo $basePath; ?>">Torna alle Stanze</a>
+  <a href="<?php echo $basePath ?>create/create.php">Aggiungi una Stanza</a>
 </nav>
 </header>
